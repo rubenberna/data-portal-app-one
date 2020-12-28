@@ -4,7 +4,7 @@
   "description": "Github profile finder",
   "author": "rubenberna",
   "license": "MIT",
-  "repository": "rubenberna/@data-portal/app-one",
+  "repository": "rubenberna/data-portal-app-one",
   "main": "dist/index.js",
   "module": "dist/index.modern.js",
   "source": "src/index.js",
@@ -49,5 +49,9 @@
   },
   "files": [
     "dist"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^0.21.1",
+    "react-spinners": "^0.9.0"
+  }
 }

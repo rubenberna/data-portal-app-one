@@ -1,6 +1,6 @@
 {
-  "short_name": "@data-portal/app-one",
-  "name": "@data-portal/app-one",
+  "short_name": "@rubenberna/react-switch-app-one",
+  "name": "@rubenberna/react-switch-app-one",
   "icons": [
     {
       "src": "favicon.ico",

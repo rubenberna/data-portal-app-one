@@ -1,10 +1,9 @@
 import React from 'react'
-
-import { ExampleComponent } from '@data-portal/app-one'
-import '@data-portal/app-one/dist/index.css'
+import { Component, metadata } from '@rubenberna/react-switch-app-one'
+import '@rubenberna/react-switch-app-one/dist/index.css'
 
 const App = () => {
-  return <ExampleComponent text="Create React Library Example 😄" />
+  return <Component/>
 }
 
 export default App

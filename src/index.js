@@ -1,6 +1,29 @@
 import React from 'react'
-import styles from './styles.module.css'
+import { App } from './components/App'
+import PropTypes from 'prop-types'
+import { GitHubIcon } from './components/_icons'
 
-export const ExampleComponent = ({ text }) => {
-  return <div className={styles.test}>Example Component: {text}</div>
+const Component = ({ text, searchInput, state }) => {
+  return <App text={text} searchInput={searchInput} />
+}
+
+const metadata = {
+  title: 'Github finder',
+  requiredPermissions: ['Admin', 'Super.Admin'],
+  description: 'A tiny app to search for Github profiles',
+  icon: GitHubIcon
+}
+
+export { Component, metadata }
+
+App.propTypes = {
+  searchInput: PropTypes.string,
+  text: PropTypes.string,
+  state: PropTypes.shape({
+    isAuthenticated: PropTypes.bool,
+    token: PropTypes.string,
+    username: PropTypes.string,
+    role: PropTypes.string,
+    errorMessage: PropTypes.string
+  })
 }
