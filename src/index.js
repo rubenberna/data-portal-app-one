@@ -14,7 +14,7 @@ const metadata = {
   icon: GitHubIcon
 }
 
-export { Component, metadata }
+export { Component as default, metadata }
 
 App.propTypes = {
   searchInput: PropTypes.string,
