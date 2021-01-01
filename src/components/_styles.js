@@ -25,11 +25,13 @@ export const flexColumnContainer = {
   alignItems: 'center'
 }
 
-export const flexRowCenter = {
+export const searchButton = {
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
-  alignItems: 'center'
+  alignItems: 'center',
+  padding: '5px',
+  borderRadius: '5px'
 }
 
 export const textCenter = {
@@ -50,4 +52,9 @@ export const header = {
   fontSize: '30px',
   width: '100%',
   textAlign: 'center'
+}
+
+export const input = {
+  marginBottom: '30px',
+  padding: '10px'
 }

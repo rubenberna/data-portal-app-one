@@ -5,34 +5,30 @@ import BeatLoader from 'react-spinners/ClipLoader'
 import {
   avatar,
   flexColumnContainer,
-  italic,
+  searchButton,
   profileStyle,
+  smallRightMargin,
   subTitle,
-  flexRowCenter,
-  smallRightMargin
+  input
 } from './_styles'
 import { GitHubIcon } from './_icons'
 
-export const GithubProfileSearch = ({ searchInput }) => {
+export const GithubProfileSearch = () => {
   const [profile, setProfile] = useState()
   const [loading, setLoading] = useState(false)
+  const [searchInput, setSearchInput] = useState(undefined)
 
   const fetchProfile = async (e) => {
     e.preventDefault()
     setLoading(true)
     const res = await axios.get(`https://api.github.com/users/${searchInput}`)
-    console.log(res.data)
     setLoading(false)
     setProfile(res.data)
   }
 
   const renderProfile = () => (
     <div style={profileStyle}>
-      <img
-        style={avatar}
-        src={profile.avatar_url}
-        alt='github avatar'
-      />
+      <img style={avatar} src={profile.avatar_url} alt='github avatar' />
       <div>
         <p>
           <span style={subTitle}>Name: </span>
@@ -48,13 +44,14 @@ export const GithubProfileSearch = ({ searchInput }) => {
 
   return (
     <div style={flexColumnContainer}>
-      {searchInput && (
-        <p>
-          Search input: <span style={italic}>{searchInput}</span>
-        </p>
-      )}
-      <button onClick={fetchProfile} type="submit" style={flexRowCenter}>
-        <GitHubIcon style={smallRightMargin}/>
+      <input
+        type='text'
+        placeholder='search by Github handler'
+        style={input}
+        onChange={(e) => setSearchInput(e.target.value)}
+      />
+      <button onClick={fetchProfile} type='submit' style={searchButton}>
+        <GitHubIcon style={smallRightMargin} />
         Search Github profiles
       </button>
       <BeatLoader size={70} color='#399D8B' loading={loading} />

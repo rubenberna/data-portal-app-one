@@ -4,11 +4,11 @@ import { Header } from './Header'
 import { GithubProfileSearch } from './GithubProfileSearch'
 import { flexColumnContainer } from './_styles'
 
-export const App = ({ text, searchInput }) => {
+export const App = ({ state }) => {
   return (
     <div style={flexColumnContainer}>
-      <Header text={text} />
-      <GithubProfileSearch searchInput={searchInput} />
+      <Header text={state?.username} />
+      <GithubProfileSearch />
     </div>
   )
 }

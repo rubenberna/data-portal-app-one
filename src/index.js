@@ -1,24 +1,23 @@
 import React from 'react'
 import { App } from './components/App'
 import PropTypes from 'prop-types'
-import { GitHubIcon } from './components/_icons'
+import { logo } from './assets/base64.images'
 
-const Component = ({ text, searchInput, state }) => {
-  return <App text={text} searchInput={searchInput} />
+const Component = ({ state }) => {
+  return <App sate={state} />
 }
 
 const metadata = {
   title: 'Github finder',
   requiredPermissions: ['Admin', 'Super.Admin'],
   description: 'A tiny app to search for Github profiles',
-  icon: GitHubIcon
+  libraryPath: '@data-portal/app-one',
+  icon: logo
 }
 
 export { Component as default, metadata }
 
 App.propTypes = {
-  searchInput: PropTypes.string,
-  text: PropTypes.string,
   state: PropTypes.shape({
     isAuthenticated: PropTypes.bool,
     token: PropTypes.string,
